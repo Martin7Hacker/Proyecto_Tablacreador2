@@ -1,0 +1,205 @@
+ <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <script language="javascript" type="text/javascript">
+    /* define las rutinas de el titulo dentro del titulo de la 
+       aplicasiòn informatica */
+       
+       /********************************************************************************************************                                               
+        *   V2.0                                                                                               *
+        * Programa escrito por Martin Grasso 2006 a 2018 escrivir tablas. //                                   *
+        * Tala Canelones Todos los derechos reservados.                                                        *
+        *                                                                                                      *
+        ********************************************************************************************************/
+      
+      // variables de memoria con cuadros de dialogos //
+      
+      var del=window.prompt("qué tabla de multiplicar?:","2");
+      var inicio_x=window.prompt("Inicia en?: ","1");
+      var finalizar_x=window.prompt("Finaliza en?: ","10");
+	  var tablCrea=window.prompt("Del comienzo "+ del + " " + " hasta que numero de Tabla quiere que se cree?" ,"10");
+      tablCrea--;
+	  var saltear_x=window.prompt("Saltear Taba? de a: ","1");
+      var formato_x=window.prompt("tipo de formato?:  1 )- "+del +'x'+ '1' +'=' +del +"____________" + "   2 ) - "+1 +'x'+ del +'=' +del    ,"1");
+      var espacio=window.prompt("Dejar un espacio entre Tabla y tabla?","SI");
+	  var lnum=window.prompt("Formato Matemático o lectura por Software?, ej: Balabolka: por o x","por");
+      var lugar=formato_x;
+      var sel_x='v';
+      var sel1='';
+	
+	  
+	
+               
+       /* pasar el titulo */
+       function EscrivirTitulo(){
+         var titulo = 'Tabla Creador v2.0';
+      
+      if(!titulo){
+         titulo='el titulo Martinsoft 2018';
+      }
+      
+      
+       document.write('<title>'+ titulo + '</title>');
+      
+       }
+       // escrive las opciónes en la pantalla //
+        function EscrivirOpciones(){
+      window.print();
+     }
+       // dibuja el programa en la pantalla //
+        function DibujarPrograma(){
+       EscrivirTitulo();
+   document.write('<form name="frmCreador">');
+   document.write('<h1 align="center"> Tabla Creador v2.0</h1>');
+  
+   document.write('<table width="590" border="1" align="center" bgcolor="#F0F0F0">');
+         document.write(' <tr>');
+         document.write('   <td width="122"><span class="Estilo6">Tabla del:</span></td>');
+		  document.write('<a href="http://www.cross-plus-a.com/es/balabolka.htm" align="center"> Descargar Software lector Balabolka convertidor *.WMP </a>');
+         document.write('   <td width="266"><span class="Estilo6">');
+         document.write('     <label>');
+         document.write(del);
+         document.write('     </label>');
+         document.write('   </span></td>');
+         document.write(' </tr>');
+         document.write(' <tr>');
+         document.write('   <td><span class="Estilo6">Inicio en: </span></td>');
+         document.write('   <td><span class="Estilo6">');
+         document.write('     <label>');
+         document.write(inicio_x);
+         document.write('     </label>');
+         document.write('   </span></td>');
+         document.write(' </tr>');
+         document.write(' <tr>');
+         document.write('   <td><span class="Estilo6">Finaliza en: </span></td>');
+         document.write('   <td><span class="Estilo6">');
+         document.write('     <label>');
+         document.write(finalizar_x);
+         document.write('     </label>');
+         document.write('   </span></td>');
+         document.write(' </tr>');
+         document.write(' <tr>');
+         document.write('   <td><span class="Estilo6">formato:</span></td>');
+         document.write('   <td><span class="Estilo6">');
+         document.write('   <label>');
+         document.write('   <label>');
+  
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+  // Según el valor de tabla seleccionada //
+  
+   if(formato_x==1){
+    sel1=sel_x  + "  )- "+del +'x'+ '1' +'=' + del;
+    
+   }else{
+    sel1=sel_x+ ") - "+1 +'x'+ del +'=' +del;
+   }
+   
+   //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         
+   document.write(sel1);
+         document.write('     <label></label>');
+         document.write('   </label>');
+         document.write('   </span></td>');
+         document.write(' </tr>');
+         document.write(' <tr>');
+         document.write('   <td><span class="Estilo6">Opciones / Imprimir. /refrescar. </span></td>');
+         document.write('   <td><span class="Estilo6">');
+         document.write('     <label>');
+         document.write('       <input type="button" name="btnops" value="Opciónes" onClick="EscrivirOpciones();">');
+         document.write('     </label>');
+         document.write('     <label>');
+         document.write('     <input type="button" name="btnref" value="Borrar y Crear..." onClick="location.reload(true)">');
+         document.write('     </label>');
+         document.write('   </span></td>');
+         document.write(' </tr>');
+         document.write('</table>');
+         document.write('<table width="590" height="79" border="1" align="center" bordercolor="#000000" bgcolor="#ffffff">');
+         document.write('  <tr>');
+         document.write('    <td width="778" height="23" bgcolor="#0033FF"><div align="center"><strong>Pizarrón qué genera las Tablas. tabla del : '+del + " hasta Tabla del  " + tablCrea + " más +1");          
+   document.write('</strong></div></td>');
+         document.write('  </tr>');
+         document.write('  <tr>');
+         document.write('    <td height="23"> <p align="center" bgcolor="#ffffff">');
+  /* *******************************************************************************************************************************************/
+  for(var tablas=1;tablas<=tablCrea;tab++ * saltear_x){
+   
+   for(var tab=inicio_x;tab<=finalizar_x;tab++ * saltear_x){
+     
+     var rojo      ='#F00';
+     var verde     ='#0F0';
+     var amarillo  ='#FF0';
+     var violeta   ='#909';
+     var blanco    ='#FFF';
+     var azul      ='#00F';
+      
+  // Alterna las tablas de Múltiplicar // 
+  
+      if(lugar==2){
+      
+      tab1=tab;
+      tab2=del;
+      
+     }else{
+      
+      tab1=del;
+      tab2=tab;
+      
+     }
+     if(lnum=="X" || lnum=="x"){
+	 document.writeln(tab1 + ' x ' + tab2 +' = ' + tab * del + '</br>');  
+	 }else{
+	 document.writeln(tab1 + ' por ' + tab2 +'  ' + tab * del + '</br>');  
+	 }
+     }
+     
+	 if(espacio=="SI" || espacio=="si"){
+	  
+	 document.writeln('</br>');  
+	 
+	 }
+    
+	del++;
+   tablas++;
+   
+    
+	}
+   
+  /********************************************************************************************************************************************/ 
+  
+   document.write('</p></td>');
+         document.write('  </tr>');
+         document.write('  <tr>');
+         document.write('   <td height="23" bgcolor="#0033FF"><div align="center" class="Estilo7">Autor de Este Programa Martin Grasso 2014. </div></td>');
+         document.write('  </tr>');
+         document.write(' </table>');
+   document.write(' <table width="590" border="1" align="center" bgcolor="#F0F0F0">');
+         document.write('   <tr>');
+         document.write('     <td width="599"><div align="center"><strong>Martinsoft 2018 todos los derechos reservados Canelones. </strong></div></td>');
+         document.write('   </tr>');
+         document.write(' </table>');
+   document.write(' <P align="center"><a href="https://mega.co.nz/#!nMQVmJrI!maMTLPZ7GWrjUIKekCVUZVl7ruk960Kmbc9x9DkEHw4">Descarge aqui el código fuente</a></br>2006 a 2015</P>');
+   document.write('<P align="center"> <img src="https://3.bp.blogspot.com/-3tiBnjuZF8c/WsTddTb94BI/AAAAAAAAEDU/0tdtNRx4T8ISbbGeSSoO90Elf_OMQCgzQCLcBGAs/s320/linux-wallpaper-png-awesome-linux-logo-transparent-eenterprise-linux-epel-of-linux-wallpaper-png.png" width="25" height="25"></p>');
+   document.write('<P align="center"> <img src="http://ayudawp.com/wp-content/uploads/2007/12/windows.png" width="25" height="25"></p>');  
+   document.write('<P align="center"> <img src="http://vignette2.wikia.nocookie.net/borderlands/images/e/e5/Apple_Logo.png/revision/latest?cb=20100118002437" width="25" height="25"></p>'); 
+   document.write(' </form>');
+  }     
+</script>
+         <style type="text/css">
+<!--
+.Estilo6 {color: #990066}
+.txt{ background-color:#999999,color:#0000FF};
+.Estilo7 {
+ color: #000000;
+ font-weight: bold;
+}
+.Estilo8 {
+ color: #FFFFFF;
+ font-weight: bold;
+}
+
+-->
+ </style>
+     <head>
+    </head>
+    <body  onLoad="DibujarPrograma();">
+  </body>
+ </html>
